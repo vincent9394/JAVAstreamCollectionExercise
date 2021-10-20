@@ -16,7 +16,8 @@ public class StreamFilter {
     }
 
     public List<Integer> getCommonElements(List<Integer> numbers, List<Integer> anotherNumbers) {
-        return null;
+
+        return numbers.stream().filter(anotherNumbers::contains).collect(Collectors.toList());
     }
 
 
