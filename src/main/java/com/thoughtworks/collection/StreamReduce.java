@@ -5,17 +5,18 @@ import java.util.List;
 public class StreamReduce {
 
     public int getLastOdd(List<Integer> numbers) {
-return 0;
-//        return returnnumbers.stream().reduce();
+
+        return numbers.stream().filter(number ->number %2==1 ).reduce((first, second)->second).orElse(0);
+
     }
 
     public String getLongest(List<String> words) {
 
-        return words.stream().reduce("",(word1, word2) -> word1.length() > word2.length() ? word1 : word2);
+        return words.stream().reduce("", (word1, word2) -> word1.length() > word2.length() ? word1 : word2);
     }
 
     public int getTotalLength(List<String> words) {
 
-        return words.stream().reduce("",(word1,word2) -> word1 + word2).length();
+        return words.stream().reduce("", (word1, word2) -> word1 + word2).length();
     }
 }
