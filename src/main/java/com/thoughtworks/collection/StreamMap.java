@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +24,7 @@ public class StreamMap {
     }
 
     public List<Integer> mapLength(List<String> words) {
-        return null;
+
+        return words.stream().map(wordLength -> wordLength.length()).collect(Collectors.toList());
     }
 }
