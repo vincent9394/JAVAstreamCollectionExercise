@@ -15,6 +15,7 @@ return 0;
     }
 
     public int getTotalLength(List<String> words) {
-        return 0;
+
+        return words.stream().reduce("",(word1,word2) -> word1 + word2).length();
     }
 }

@@ -10,15 +10,18 @@ public class StreamSupplement {
     }
 
     public List<Integer> sortFromMaxToMin(List<Integer> numbers) {
-        return null;
+        return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+
     }
 
     public double getAverage(List<Integer> numbers) {
-        return 0;
+
+        return new Double(numbers.stream().reduce((num1, num2) -> num1 + num2).orElse(0)) / numbers.size();
     }
 
     public int getMaxValue(List<Integer> numbers) {
-        return 0;
+
+        return numbers.stream().reduce(0, (a, b) -> Integer.max(a, b));
     }
 
 }
